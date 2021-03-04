@@ -2,21 +2,7 @@ import { Config } from "@baltimorecounty/javascript-utilities";
 
 const { setConfig, getValue } = Config;
 
-const InitializeDateValues = () => {
-  var dateFormat = require("dateformat");
-
-  const startDate = new Date().setFullYear(new Date().getFullYear() - 2);
-  const endDate = new Date().setDate(new Date().getDate() - 1);
-
-  const startDateFormat = dateFormat(startDate, "mm/dd/yyyy");
-  const endDateFormat = dateFormat(endDate, "mm/dd/yyyy");
-
-  var fromToDateFormat = startDateFormat + "," + endDateFormat;
-
-  return fromToDateFormat;
-};
-
-const apiPath = `api/hub/structuredContent/Events?filterdate=${InitializeDateValues()}`;
+const apiPath = `api/hub/structuredContent/Events`;
 const testApiRoot = `https://testservices.baltimorecountymd.gov/${apiPath}`;
 const prodApiRoot = `https://services.baltimorecountymd.gov/${apiPath}`;
 
@@ -24,7 +10,7 @@ const prodApiRoot = `https://services.baltimorecountymd.gov/${apiPath}`;
  * Run Startup Code
  */
 const Run = () => {
-  // HACK - the Config utiltiy does not account for beta.
+  // HACK - the Config utility does not account for beta.
   // TODO: This will need to be addressed when we get closer to launch
   const localApiRoot =
     window.location.hostname.indexOf("beta") > -1
@@ -49,4 +35,4 @@ const Run = () => {
   setConfig(configValues);
 };
 
-export { Run , getValue};
+export { Run, getValue };

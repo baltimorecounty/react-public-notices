@@ -2,49 +2,39 @@ import {
   Button,
   Card,
   CardContent,
-  CardFooter
+  CardFooter,
 } from "@baltimorecounty/dotgov-components";
 
-import PublicNoticesThumbnail from "./PublicNoticesThumbnail";
+//import PublicNoticesThumbnail from "./PublicNoticesThumbnail";
 import React from "react";
 
-const PublicNoticCard = props => {
-  const {
-    contentDate,
-    title,
-    articleSummary,
-    thumbnail,
-    thumbnailAltText,
-    url
-  } = props;
+const PublicNoticeCard = (props) => {
+  const { startDate, name, location, thumbnail, thumbnailAltText, url } = props;
 
   const options = {
     year: "numeric",
     month: "long",
-    day: "numeric"
+    day: "numeric",
   };
 
-  const articleDate = new Date(contentDate).toLocaleDateString(
-    "en-US",
-    options
-  );
+  const noticeDate = new Date(startDate).toLocaleDateString("en-US", options);
 
   return (
     <Card className="text-left">
       <h2>
-        <a href={url}>{title}</a>
+        <a href={url}>{name}</a>
       </h2>
       <CardContent>
         <div className="row">
           <div className="col-sm-3 col-xs-12 text-center">
-            <PublicNoticesThumbnail
+            {/* <PublicNoticesThumbnail
               thumbnail={thumbnail}
               thumbnailAltText={thumbnailAltText}
-            />
+            /> */}
           </div>
           <div className="col-sm-9 col-xs-12">
-            <p>{articleDate}</p>
-            <p>{articleSummary}</p>
+            <p>{noticeDate}</p>
+            <p>{location}</p>
           </div>
         </div>
       </CardContent>
@@ -55,4 +45,4 @@ const PublicNoticCard = props => {
   );
 };
 
-export default PublicNoticCard;
+export default PublicNoticeCard;
