@@ -2,22 +2,46 @@ import {
   Button,
   Card,
   CardContent,
-  CardFooter,
+  CardFooter
 } from "@baltimorecounty/dotgov-components";
 
-//import PublicNoticesThumbnail from "./PublicNoticesThumbnail";
+import PublicNoticesThumbnail from "./PublicNoticesThumbnail";
 import React from "react";
+// get our fontawesome imports
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactHtmlParser from "react-html-parser";
 
-const PublicNoticeCard = (props) => {
-  const { startDate, name, location, thumbnail, thumbnailAltText, url } = props;
+const PublicNoticeCard = props => {
+  const {
+    startDate,
+    endDate,
+    name,
+    location,
+    description,
+    thumbnail,
+    thumbnailAltText,
+    url
+  } = props;
 
   const options = {
     year: "numeric",
     month: "long",
-    day: "numeric",
+    day: "numeric"
   };
 
   const noticeDate = new Date(startDate).toLocaleDateString("en-US", options);
+  const startTime = new Date(startDate).toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true
+  });
+  const endTime = new Date(endDate).toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true
+  });
+  var showDescription = ReactHtmlParser(`${description}`);
 
   return (
     <Card className="text-left">
@@ -26,15 +50,31 @@ const PublicNoticeCard = (props) => {
       </h2>
       <CardContent>
         <div className="row">
-          <div className="col-sm-3 col-xs-12 text-center">
-            {/* <PublicNoticesThumbnail
+          {/* <div className="col-sm-3 col-xs-12 text-center"> 
+           <PublicNoticesThumbnail
               thumbnail={thumbnail}
               thumbnailAltText={thumbnailAltText}
-            /> */}
-          </div>
-          <div className="col-sm-9 col-xs-12">
-            <p>{noticeDate}</p>
+            /> 
+           </div>  */}
+
+          <div className="">
+            <p>
+              <span>
+                {" "}
+                <FontAwesomeIcon icon={["fa", "calendar"]} />
+                &nbsp;&nbsp;
+              </span>
+              {noticeDate}&nbsp;&nbsp;
+              <span>
+                {" "}
+                <FontAwesomeIcon icon={["fa", "clock"]} />
+                &nbsp;&nbsp;{startTime}
+              </span>
+              &nbsp;&nbsp;
+              <span>- {endTime}</span>
+            </p>
             <p>{location}</p>
+            <p>{showDescription} </p>
           </div>
         </div>
       </CardContent>
