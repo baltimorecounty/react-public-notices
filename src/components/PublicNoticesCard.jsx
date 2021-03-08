@@ -29,6 +29,7 @@ const PublicNoticeCard = props => {
     month: "long",
     day: "numeric"
   };
+  
 
   const noticeDate = new Date(startDate).toLocaleDateString("en-US", options);
   const startTime = new Date(startDate).toLocaleString("en-US", {
@@ -57,21 +58,14 @@ const PublicNoticeCard = props => {
             /> 
            </div>  */}
 
-          <div className="">
+          <div className="col-sm-9 col-xs-12">
             <p>
               <span>
                 {" "}
                 <FontAwesomeIcon icon={["fa", "calendar"]} />
-                &nbsp;&nbsp;
+                <i> {noticeDate}</i> <FontAwesomeIcon icon={["fa", "clock"]} />
+                <i> {startTime} </i>- <i>{endTime} </i>
               </span>
-              {noticeDate}&nbsp;&nbsp;
-              <span>
-                {" "}
-                <FontAwesomeIcon icon={["fa", "clock"]} />
-                &nbsp;&nbsp;{startTime}
-              </span>
-              &nbsp;&nbsp;
-              <span>- {endTime}</span>
             </p>
             <p>{location}</p>
             <p>{showDescription} </p>
