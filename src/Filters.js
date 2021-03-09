@@ -10,7 +10,7 @@ const type = {
 
 const filters = [
   {
-    targetApiField: "category.value",
+    targetApiField: "calendarName",
     displayName: "Department",
     options: [
       { value: "Aging", label: "Aging" },
