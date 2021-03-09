@@ -58,7 +58,7 @@ const PublicNoticeCard = props => {
             /> 
            </div>  */}
 
-          <div className="col-sm-9 col-xs-12">
+          <div className="col-sm-12 col-xs-12">
             <p>
               <span>
                 {" "}

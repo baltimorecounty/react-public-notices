@@ -1,5 +1,5 @@
 import { Config } from "@baltimorecounty/javascript-utilities";
-
+import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
 const { setConfig, getValue } = Config;
 
 const apiPath = `api/hub/structuredContent/Events`;
