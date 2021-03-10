@@ -2,17 +2,15 @@ import {
   Button,
   Card,
   CardContent,
-  CardFooter
+  CardFooter,
 } from "@baltimorecounty/dotgov-components";
-
+import { ConvertSETags } from "../utilities/ConvertSETags";
 import PublicNoticesThumbnail from "./PublicNoticesThumbnail";
 import React from "react";
-// get our fontawesome imports
-import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactHtmlParser from "react-html-parser";
 
-const PublicNoticeCard = props => {
+const PublicNoticeCard = (props) => {
   const {
     startDate,
     endDate,
@@ -21,26 +19,25 @@ const PublicNoticeCard = props => {
     description,
     thumbnail,
     thumbnailAltText,
-    url
+    url,
   } = props;
 
   const options = {
     year: "numeric",
     month: "long",
-    day: "numeric"
+    day: "numeric",
   };
-  
 
   const noticeDate = new Date(startDate).toLocaleDateString("en-US", options);
   const startTime = new Date(startDate).toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
-    hour12: true
+    hour12: true,
   });
   const endTime = new Date(endDate).toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
-    hour12: true
+    hour12: true,
   });
   var showDescription = ReactHtmlParser(`${description}`);
 
@@ -68,7 +65,7 @@ const PublicNoticeCard = props => {
               </span>
             </p>
             <p>{location}</p>
-            <p>{showDescription} </p>
+            {ConvertSETags(showDescription)}
           </div>
         </div>
       </CardContent>

@@ -1,7 +1,7 @@
 import "./index.css";
 import "react-app-polyfill/ie11";
 import "react-app-polyfill/stable";
-
+import "./polyfills/replaceAll.polyfill";
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
