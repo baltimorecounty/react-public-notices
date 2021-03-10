@@ -39,7 +39,6 @@ const PublicNoticeCard = (props) => {
     minute: "numeric",
     hour12: true,
   });
-  var showDescription = ReactHtmlParser(`${description}`);
 
   return (
     <Card className="text-left">
@@ -65,7 +64,7 @@ const PublicNoticeCard = (props) => {
               </span>
             </p>
             <p>{location}</p>
-            {ConvertSETags(showDescription)}
+            {ReactHtmlParser(`${ConvertSETags(description)}`)}
           </div>
         </div>
       </CardContent>
