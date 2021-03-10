@@ -1,13 +1,3 @@
-const recordsPerPage = {
-  targetApiField: "recordsperpage",
-  value: 10
-};
-
-const type = {
-  targetApiField: "type",
-  value: "Public Notice"
-};
-
 const filters = [
   {
     targetApiField: "calendarName",
@@ -24,7 +14,7 @@ const filters = [
       { value: "PDM_d7", label: "Zoning hearings for district 7" },
       {
         value: "Economic%20and%20Workforce%20Development",
-        label: "Economic and Workforce Development"
+        label: "Economic and Workforce Development",
       },
       { value: "Business Events", label: "Business Events" },
       { value: "Job Seeker Events", label: "Job Seeker Events" },
@@ -35,19 +25,19 @@ const filters = [
       { value: "Holiday Closings", label: "Holiday Closings" },
       {
         value: "Human Relations Commission",
-        label: "Human Relations Commission"
+        label: "Human Relations Commission",
       },
       { value: "Liquor Board", label: "Liquor Board" },
       { value: "Local Management Board", label: "Local Management Board" },
       {
         value: "Personnel and Salary Advisory Board",
-        label: "Personnel and Salary Advisory Board"
+        label: "Personnel and Salary Advisory Board",
       },
       { value: "Police", label: "Police" },
       { value: "Procurement", label: "Procurement" },
       {
         value: "Professional Service Selection Committee",
-        label: "Professional Service Selection Committee"
+        label: "Professional Service Selection Committee",
       },
       { value: "Recreationregion1", label: "Recreation region 1" },
       { value: "Recreationregion2", label: "Recreation region 2" },
@@ -55,14 +45,18 @@ const filters = [
       { value: "Recreationregion4", label: "Recreation region 4" },
       { value: "RecreationParksNatureare", label: "Nature" },
       { value: "recreationtherapeuticarea", label: "Therapeutic" },
-      { value: "Tower Review Committee", label: "Tower Review Committee" }
-    ]
+      { value: "Tower Review Committee", label: "Tower Review Committee" },
+    ],
   },
 
   {
     targetApiField: "recordsperpage",
-    value: 10
-  }
+    value: 10,
+  },
+  {
+    targetApiField: "type",
+    value: "Public Notice",
+  },
 ];
 
-export { recordsPerPage, type, filters };
+export { filters };
