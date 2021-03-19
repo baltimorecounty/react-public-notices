@@ -1,12 +1,10 @@
-import "./index.css";
+import "./fontawesome";
 import "react-app-polyfill/ie11";
 import "react-app-polyfill/stable";
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-
+import "./polyfills/replaceAll.polyfill";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 //import reportWebVitals from './reportWebVitals';
 
@@ -14,8 +12,8 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
- //  document.getElementById("past-events-table")
-   document.getElementById('root')
+  //  document.getElementById("past-events-table")
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

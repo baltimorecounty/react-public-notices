@@ -1,11 +1,12 @@
-const recordsPerPage = {
-  targetApiField: "recordsperpage",
-  value: 10,
-};
+const filters = [
+  {
+    targetApiField: "recordsperpage",
+    value: 10,
+  },
+  {
+    targetApiField: "type",
+    value: "Public Notice",
+  },
+];
 
-const type = {
-  targetApiField: "type",
-  value: "Public Notice",
-};
-
-export default [recordsPerPage, type];
+export { filters };
