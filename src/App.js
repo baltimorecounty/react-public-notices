@@ -10,7 +10,7 @@ Run();
 function App(props) {
   return (
     <FilterList
-      title="Baltimore County Police Newsroom"
+      title="Baltimore County Public Notices"
       filters={filters}
       apiEndpoint={getValue("apiRoot")}
       renderItem={props => <PublicNoticesCard {...props} />}
