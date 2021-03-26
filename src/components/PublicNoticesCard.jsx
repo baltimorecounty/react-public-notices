@@ -4,29 +4,20 @@ import {
   CardContent,
   CardFooter,
 } from "@baltimorecounty/dotgov-components";
-import { ConvertSETags } from "../utilities/ConvertSETags";
-import PublicNoticesThumbnail from "./PublicNoticesThumbnail";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactHtmlParser from "react-html-parser";
 
 const PublicNoticeCard = (props) => {
-  const {
-    startDate,
-    endDate,
-    name,
-    location,
-    description,
-    thumbnail,
-    thumbnailAltText,
-    url,
-  } = props;
+  const { startDate, endDate, name, location, description, url } = props;
 
   const options = {
     year: "numeric",
     month: "long",
     day: "numeric",
   };
+
+  console.log(props);
 
   const noticeDate = new Date(startDate).toLocaleDateString("en-US", options);
   const startTime = new Date(startDate).toLocaleString("en-US", {
@@ -47,13 +38,6 @@ const PublicNoticeCard = (props) => {
       </h2>
       <CardContent>
         <div className="row">
-          {/* <div className="col-sm-3 col-xs-12 text-center"> 
-           <PublicNoticesThumbnail
-              thumbnail={thumbnail}
-              thumbnailAltText={thumbnailAltText}
-            /> 
-           </div>  */}
-
           <div className="col-sm-12 col-xs-12">
             <p>
               <span>
@@ -64,7 +48,7 @@ const PublicNoticeCard = (props) => {
               </span>
             </p>
             <p>{location}</p>
-            {ReactHtmlParser(`${ConvertSETags(description)}`)}
+            {ReactHtmlParser(description)}
           </div>
         </div>
       </CardContent>
