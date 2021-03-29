@@ -13,11 +13,11 @@ function App(props) {
       title="Baltimore County Public Notices"
       filters={filters}
       apiEndpoint={getValue("apiRoot")}
-      renderItem={props => <PublicNoticesCard {...props} />}
+      renderItem={(props) => <PublicNoticesCard {...props} />}
       includeInputFilter={true}
       includeDateFilter={true}
       includeClearButton={true}
-      searchCategory="none "
+      searchCategory="PublicNotices"
       inputFilterPlaceholder="Begin typing to filter by title or summary..."
     />
   );

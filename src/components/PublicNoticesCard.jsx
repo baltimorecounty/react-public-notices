@@ -17,8 +17,6 @@ const PublicNoticeCard = (props) => {
     day: "numeric",
   };
 
-  console.log(props);
-
   const noticeDate = new Date(startDate).toLocaleDateString("en-US", options);
   const startTime = new Date(startDate).toLocaleString("en-US", {
     hour: "numeric",
