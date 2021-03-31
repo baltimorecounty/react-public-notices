@@ -7,9 +7,18 @@ import {
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactHtmlParser from "react-html-parser";
+import { FixLinks } from "../utilities/fixLinks";
 
 const PublicNoticeCard = (props) => {
-  const { startDate, endDate, name, location, description, url } = props;
+  const {
+    startDate,
+    endDate,
+    name,
+    location,
+    description,
+    url,
+    objectUrl,
+  } = props;
 
   const options = {
     year: "numeric",
@@ -46,7 +55,7 @@ const PublicNoticeCard = (props) => {
               </span>
             </p>
             <p>{location}</p>
-            {ReactHtmlParser(description)}
+            {ReactHtmlParser(FixLinks(description, objectUrl))}
           </div>
         </div>
       </CardContent>
