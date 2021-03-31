@@ -11,10 +11,11 @@ const FixLinks = (description) => {
     if (links[i].getAttribute("objectid") != null) {
       var newLinks = links[i].cloneNode();
 
-      var record = GetLinkUrl(links[i].getAttribute("objectid"));
+      var url = GetLinkUrl(links[i].getAttribute("objectid"));
 
-      newLinks.href = record;
-
+      newLinks.href = url;
+      console.log(description.replace(/[\t\n\r]/gm, ""));
+      console.log(links[i].outerHTML);
       description = description.replace(links[i].outerHTML, newLinks.outerHTML);
     }
   }
@@ -25,12 +26,12 @@ const FixLinks = (description) => {
 const GetLinkUrl = (objectId) => {
   const [{ eventFileUrl }] = useEventsFileUrl(objectId);
   const { records } = eventFileUrl;
-  const [{ id, url }] = records;
 
-  //const { id, url } = records;
-  console.log(records);
-
-  return eventFileUrl;
+  if (records) {
+    return records[0].url;
+  } else {
+    return null;
+  }
 };
 
 export { FixLinks };
