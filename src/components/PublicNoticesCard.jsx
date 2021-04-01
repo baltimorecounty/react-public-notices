@@ -6,8 +6,6 @@ import {
 } from "@baltimorecounty/dotgov-components";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ReactHtmlParser from "react-html-parser";
-import { FixLinks } from "../utilities/fixLinks";
 
 const PublicNoticeCard = (props) => {
   const {
@@ -15,9 +13,7 @@ const PublicNoticeCard = (props) => {
     endDate,
     name,
     location,
-    description,
     url,
-    objectUrl,
   } = props;
 
   const options = {
