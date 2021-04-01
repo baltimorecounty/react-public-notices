@@ -55,7 +55,6 @@ const PublicNoticeCard = (props) => {
               </span>
             </p>
             <p>{location}</p>
-            {ReactHtmlParser(FixLinks(description, objectUrl))}
           </div>
         </div>
       </CardContent>

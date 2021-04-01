@@ -2,9 +2,9 @@ import useEventsFileUrl from "../hooks/useEventsFileUrl";
 
 const FixLinks = (description) => {
   var element = document.createElement("div");
-
+ 
   element.innerHTML = description;
-
+  console.log(description);
   var links = element.getElementsByTagName("a");
 
   for (var i = 0; i < links.length; i++) {
@@ -14,8 +14,7 @@ const FixLinks = (description) => {
       var url = GetLinkUrl(links[i].getAttribute("objectid"));
 
       newLinks.href = url;
-      console.log(description.replace(/[\t\n\r]/gm, ""));
-      console.log(links[i].outerHTML);
+
       description = description.replace(links[i].outerHTML, newLinks.outerHTML);
     }
   }

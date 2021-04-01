@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@baltimorecounty/dotgov-components": "^1.0.40",
-    "@baltimorecounty/react-filter-list": "^1.0.43",
+    "@baltimorecounty/react-filter-list": "^1.0.44",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/free-regular-svg-icons": "^5.15.2",
