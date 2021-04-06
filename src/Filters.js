@@ -7,6 +7,10 @@ const filters = [
     targetApiField: "type",
     value: "Public Notice",
   },
+  {
+    targetApiField: "orderby",
+    value: "A",
+  },
 ];
 
 export { filters };
