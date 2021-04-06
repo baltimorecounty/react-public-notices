@@ -24,6 +24,7 @@ function App(props) {
       apiEndpoint={getValue("apiRoot")}
       renderItem={(props) => <PublicNoticesCard {...props} />}
       canSearchInFuture={true}
+      customStartDate={new Date()}
       customEndDate={GenerateEndDate()}
       includeInputFilter={true}
       includeDateFilter={true}
